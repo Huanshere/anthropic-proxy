@@ -3,9 +3,8 @@ import Fastify from 'fastify'
 import { TextDecoder } from 'util'
 
 const baseUrl = process.env.ANTHROPIC_PROXY_BASE_URL || 'https://openrouter.ai/api'
-const requiresApiKey = !process.env.ANTHROPIC_PROXY_BASE_URL
-const key = requiresApiKey ? process.env.OPENROUTER_API_KEY : null
-const model = 'google/gemini-2.0-pro-exp-02-05:free'
+const key = process.env.API_KEY
+const model = 'claude-3-7-sonnet-20250219'
 const models = {
   reasoning: process.env.REASONING_MODEL || model,
   completion: process.env.COMPLETION_MODEL || model,
